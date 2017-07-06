@@ -16,16 +16,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-
 Route::get('/vend', function() {
     return view('about');
 });
 
-Route::get('/api/sync', 'SyncController@sync');
+Route::post('/api/sync', 'SyncController@sync');
 
 Route::get('/api/products', function () {
 	$products = DB::table('inventory')->get();

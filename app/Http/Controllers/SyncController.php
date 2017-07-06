@@ -30,9 +30,10 @@ class SyncController extends Controller
 			}
 			else{
 				DB::table('inventory')->where('sku', '=', $item[1])->update(['quantity' => $item[3]]);;
+
 			}
 		}
-    	return $inventory;
+    	return \Response::json(['status' => 'success'],201);
     }
 
 
