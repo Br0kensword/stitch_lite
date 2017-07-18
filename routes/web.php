@@ -22,6 +22,7 @@ Route::get('/vend', function() {
 
 Route::post('/api/sync', 'SyncController@sync');
 
+
 Route::get('/api/products', function () {
 	$products = DB::table('inventory')->get();
 
@@ -32,5 +33,3 @@ Route::get('/api/products/{productid}', function ($id) {
 	$product = DB::table('inventory')->where('id', "=", $id)->get();
 	return $product;
 });
-    // Continue.. 
-
